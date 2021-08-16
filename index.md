@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+# Walter Augustine - SNHU Computer Science Capstone - 2021
 
-You can use the [editor on GitHub](https://github.com/Walter-0/walter-0.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+## Professional Self-Assessment
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This portfolio represents a wide range of the skills I have developed during my time in the computer science bachelor's degree program at SNHU, which include collaborating in an agile software lifecycle, using data structures and algorithms, developing with a security-first mindset, and software testing.
 
-### Markdown
+In this project, I used a modern technology stack to build an application that follows industry best-practices and is both maintainable and extensible. The artifacts in this portfolio are all part of the same software project. I used my final project from CS-340 as a starting point, which was a backend API written in Java that connected to a MongoDB database of stock information.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+In a nutshell, this project replaced Java with Python as the backend language, added a user interface, and added a realtime search capability.
 
-```markdown
-Syntax highlighted code block
+Tech stack:
 
-# Header 1
-## Header 2
-### Header 3
+* Docker
+* MongoDB Atlas
+* FastAPI
+* Python
+* React
+* TypeScript
+* Bootstrap
+* NextJS
 
-- Bulleted
-- List
+## Code Review
 
-1. Numbered
-2. List
+[Source code](https://github.com/Walter-0/CS-340-Final-Project)
 
-**Bold** and _Italic_ and `Code` text
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OPCBDHjs6pQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Link](url) and ![Image](src)
-```
+## Artifacts
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+[Source code](https://github.com/Walter-0/capstone-project)
 
-### Jekyll Themes
+### Software Design and Engineering
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Walter-0/walter-0.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+This artifact is a full stack stock application that I built with the new FARM stack, which includes FastAPI, React, and MongoDB. I reused the stock database from the previous project from CS-340, since the data source is the same. This artifact builds on the previous project in that there is less duplication, a more flexible REST API, and a front end to interact with the back end service. I think this artifact is a strong inclusion to my portfolio, considering that the remaining two artifacts will build on the first, improving the whole system. One challenge I had was Dockerizing the project. I was able to get the back end and the database running in Docker containers, but the front end had an error that I was unable to debug at first. Although this project is not deployed, I wanted to provide an initial setup for deploying a Docker container. I enjoyed working with Python, because it's less cumbersome than Java. The latest version of Python has optional typing, which I found to be a useful inclusion when building an API.
 
-### Support or Contact
+### Data Structures and Algorithms
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+For this artifact, I added the ability to send custom queries to the database that would return a list of stocks that matched. For example, a query can be sent that returns any number of stocks in a particular industry sorted by any field, ascending or descending. This artifact was not part of the original plan, which was to hard-code database queries to return lists of stocks, but is a big improvement over anything hard-coded because it's less limiting. This artifact is important because searching is an important aspect of many database systems. While the third artifact adds full-text search to only return a single stock, this artifact provides a simple way to perform min/max analyses on the stocks in the database by sorting on any of the fields present on the stock documents. The biggest challenge in this artifact was using query strings in the request to the back end, as opposed to using the request body, which I had used for POST and PUT requests.
+
+### Database
+
+This artifact adds full-text search to the MongoDB database by indexing two fields, ticker and company name, on the stock documents. I then wrote database queries in the Python back end so that the front end could search the database for stocks and receive immediate, real-time suggestions based on the input query. Additionally, there is an API route to return a list of all the industries present in the database. The biggest challenge was in building the front end component that would send a new request on every change event that the search box handled, and update a list of suggestions received from the database in response to the user typing, without having to press <kbd>Enter</kbd> or click a submit button.
